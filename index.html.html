@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortaleza Casino</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Logo circular arriba */
+    .circle-badge {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .circle-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .aviso-bono {
+      background: #f1f9f6;
+      color: #111;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 10px auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .aviso-bono img {
+      width: 18px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    /* Texto destacado */
+    .verified {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .verified span {
+      color: green;
+      font-size: 24px;
+    }
+
+    .trust {
+      color: green;
+      margin-bottom: 20px;
+    }
+
+    /* Botón verde principal */
+    .btn-wsp {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: #28a745;
+      border-radius: 40px;
+      text-decoration: none;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: blink 1.5s infinite; /* parpadeo */
+    }
+
+    /* Banner clientes ganando */
+    .clientes-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #00c6ff, #00ff99);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 40px;
+      margin: 10px auto 20px auto;
+      max-width: 380px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .clientes-banner .avatars {
+      display: flex;
+      align-items: center;
+    }
+    .clientes-banner .avatars img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin-left: -8px; /* superposición */
+    }
+    .clientes-banner span {
+      margin-left: 10px;
+    }
+
+    /* Banner 24HS al pie */
+    .banner-24hs {
+      background: linear-gradient(90deg, #ff7a00, #ff9900);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: auto;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+      animation: blink 1.5s infinite; /* parpadeo */
+    }
+
+    /* Animación de parpadeo */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Notificación emergente */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #111;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+      max-width: 320px;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    .notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .notification img {
+      width: 45px;
+      height: 45px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .notif-text strong {
+      font-size: 15px;
+    }
+    .notif-text span {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
+    /* Botón flotante de WhatsApp */
+    .float-wsp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 10000;
+      animation: pulse 1.5s infinite;
+    }
+    .float-wsp img {
+      width: 35px;
+      height: 35px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo circular -->
+  <div class="circle-badge">
+    <img src="fortaleza 2.jpg" alt="Logo Casino">
+  </div>
+
+  <!-- Textos -->
+  <div class="verified"><span>✔</span> Plataforma Verificada</div>
+  <div class="trust">Casino de Confianza</div>
+
+  <!-- Cajita de aviso -->
+  <div class="aviso-bono">
+    🎁 BONO DEL 20% ACTIVO, pedilo al Wpp.
+  </div>
+
+  <!-- Botón de WhatsApp principal -->
+  <a href="https://api.whatsapp.com/send?phone=2645472914&text=Hola!!!%20quisiera%20Crear%20usuario%20y%20reclamar%20mi%20b0nus%20de%20bienvenida%20%F0%9F%A5%B3%F0%9F%8E%81"
+   class="btn-wsp">
+   <img src="wsp.png" alt="WhatsApp" style="width:22px; height:22px; vertical-align:middle; margin-right:8px;">
+   Ir a WhatsApp ahora!
+  </a>
+
+  <!-- Banner clientes ganando -->
+  <div class="clientes-banner">
+    <div class="avatars">
+      <img src="loco1.jpg" alt="Cliente">
+      <img src="loco2.jpg" alt="Cliente">
+      <img src="loco3.jpg" alt="Cliente">
+    </div>
+    <span>+10.000 CLIENTES GANANDO <strong>todos los días</strong></span>
+  </div>
+
+  <!-- Banner 24HS abajo -->
+  <div class="banner-24hs">
+    🔥 <strong>PLATAFORMAS ABIERTAS 24 HS</strong> 🔥 ¡PAGOS SIN CRONOGRAMA!
+  </div>
+
+  <!-- Notificación emergente -->
+  <div class="notification" id="popup">
+    <img src="fortaleza 3.png" alt="Usuario">
+    <div class="notif-text">
+      <strong>Juan Gómez</strong><br>
+      🎁 <span>Premio PAGADO$$</span><br>
+      📍 Desde Rosario · hace 10 minutos
+    </div>
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://api.whatsapp.com/send?phone=2645472914&text=Hola!!!%20quisiera%20Crear%20usuario%20y%20reclamar%20mi%20b0nus%20de%20bienvenida%20%F0%9F%A5%B3%F0%9F%8E%81"
+     class="float-wsp" target="_blank">
+     <img src="wsp.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    const popup = document.getElementById("popup");
+
+    // Datos falsos de ejemplo
+    const usuarios = [
+      {nombre: "Juan Gómez", ciudad: "Corrientes", tiempo: "hace 10 minutos"},
+      {nombre: "María López", ciudad: "Córdoba", tiempo: "hace 5 minutos"},
+      {nombre: "Carlos Díaz", ciudad: "Mendoza", tiempo: "hace 2 minutos"},
+      {nombre: "Ana Torres", ciudad: "Tucumán", tiempo: "hace 8 minutos"},
+      {nombre: "Luis Fernández", ciudad: "Buenos Aires", tiempo: "hace 1 minuto"},
+    ];
+
+    let index = 0;
+
+    function mostrarNotificacion() {
+      const usuario = usuarios[index];
+      popup.innerHTML = `
+        <img src="fortaleza 3.png" alt="Usuario">
+        <div class="notif-text">
+          <strong>${usuario.nombre}</strong><br>
+          🎁 <span>Premio PAGADO$$</span><br>
+          📍 Desde ${usuario.ciudad} · ${usuario.tiempo}
+        </div>
+      `;
+      popup.classList.add("show");
+
+      // Ocultar después de 5s
+      setTimeout(() => {
+        popup.classList.remove("show");
+      }, 5000);
+
+      // Pasar al siguiente
+      index = (index + 1) % usuarios.length;
+    }
+
+    // Mostrar notificaciones cada 8s
+    setInterval(mostrarNotificacion, 8000);
+
+    // Mostrar la primera a los 2s
+    setTimeout(mostrarNotificacion, 2000);
+  </script>
+
+</body>
+</html>
